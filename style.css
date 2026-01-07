@@ -1,0 +1,241 @@
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #1a1a1a;
+    --accent: #f0f0f0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0,0,0,0.8);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.cta-nav {
+    border: 1px solid white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+}
+
+/* Hero */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('baner.jpeg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Secciones */
+section {
+    padding: 80px 50px;
+}
+
+.grid-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--gray);
+    padding: 30px;
+    border-left: 4px solid white;
+}
+
+/* Galería Klipsan */
+.gallery-section {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    position: relative;
+}
+
+.gallery-container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.photo-main {
+    width: 60%;
+    height: 100%;
+    background: #333;
+}
+
+.photo-overlay {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 50%;
+    height: 80%;
+    background: #444;
+    border: 10px solid var(--black);
+}
+
+.photo-main img, .photo-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: white;
+    width: fit-content;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 30px auto;
+}
+
+
+/* --- AJUSTES BASE RESPONSIVOS --- */
+
+/* Contenedor principal para evitar desbordamiento horizontal */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Tipografía responsiva para el Hero */
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem); /* Se ajusta entre 2.5rem y 4.5rem según pantalla */
+    padding: 0 20px;
+}
+
+/* --- MENÚ MÓVIL (Lógica de diseño) --- */
+.menu-toggle {
+    display: none; /* Oculto en PC */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* --- MEDIA QUERIES PARA CELULARES (Máximo 768px) --- */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 15px 25px;
+    }
+
+    .desktop-only { display: none; }
+
+    .menu-toggle { display: flex; z-index: 1001; }
+
+    .nav-links {
+        position: fixed;
+        left: -100%; /* Escondido a la izquierda */
+        top: 0;
+        flex-direction: column;
+        background-color: rgba(245, 3, 3, 0);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .nav-links.active {
+        left: 0; /* Aparece al hacer clic */
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    /* Ajuste de Secciones */
+    section {
+        padding: 60px 20px;
+    }
+
+    .grid-services {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+
+    /* Galería Responsiva (Efecto Klipsan ajustable) */
+    .gallery-section {
+        height: 450px;
+    }
+
+    .gallery-container {
+        width: 100%;
+    }
+
+    .photo-main {
+        width: 80%;
+        height: 80%;
+    }
+
+    .photo-overlay {
+        width: 60%;
+        height: 60%;
+        top: 30%;
+        right: 0;
+    }
+
+    .method-text h2 {
+        font-size: 2rem;
+    }
+}
