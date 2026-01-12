@@ -406,3 +406,80 @@ html, body {
         padding: 25px;
     }
 }
+
+/* Sección de Servicios V2 */
+.services-section {
+    background: #050505;
+    padding: 60px 0;
+}
+
+.services-grid {
+    display: flex;
+    flex-direction: column; /* Mobile First: una columna */
+    gap: 25px;
+    padding: 0 10px;
+}
+
+.service-card-v2 {
+    background: #111;
+    border: 1px solid #222;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.service-card-v2.featured {
+    border: 1px solid #fff; /* Resalta el servicio presencial */
+    background: #161616;
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.service-card-v2 h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.service-card-v2 p {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.btn-service {
+    display: inline-block;
+    padding: 12px 25px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-service:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* --- RESPONSIVE DESKTOP (PC) --- */
+@media (min-width: 992px) {
+    .services-grid {
+        flex-direction: row; /* Tres columnas en pantallas grandes */
+        justify-content: center;
+    }
+    
+    .service-card-v2 {
+        flex: 1;
+        max-width: 350px;
+    }
+}
