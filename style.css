@@ -239,3 +239,170 @@ html, body {
         font-size: 2rem;
     }
 }
+
+/* Sección de Logros */
+.achievements {
+    background: #0a0a0a;
+    padding: 40px 20px;
+    border-bottom: 1px solid #222;
+}
+
+.achievements-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #111;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    border: 1px solid #444;
+}
+
+.achievement-item .icon {
+    font-size: 2rem;
+}
+
+.achievement-item h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.achievement-item p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: #888;
+    text-transform: uppercase;
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-btn-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.whatsapp-btn-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-btn-float img {
+    width: 35px;
+}
+
+/* Ajuste móvil para logros */
+@media (max-width: 768px) {
+    .achievements-container {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en móvil */
+    }
+    .achievement-item {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Entrenamiento Funcional */
+.functional-training {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 20px;
+}
+
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.functional-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.functional-card {
+    background: #111;
+    padding: 40px;
+    border-radius: 5px;
+    border: 1px solid #222;
+}
+
+.functional-card.highlighted {
+    border-left: 5px solid #fff; /* Detalle visual estilo Klipsan */
+}
+
+.functional-card h3 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.check-list, .feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.check-list li::before {
+    content: "• ";
+    color: #fff;
+    font-weight: bold;
+}
+
+.feature-list li {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #222;
+}
+
+.tools {
+    margin-top: 20px;
+    font-style: italic;
+    color: #888;
+}
+
+/* Ajuste Celular */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .functional-card {
+        padding: 25px;
+    }
+}
